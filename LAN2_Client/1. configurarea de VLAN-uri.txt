@@ -1,0 +1,64 @@
+### Comutatoare pe nivelul 2 OSI (Switch-CF, Switch-CS) ###
+___________________________________________________________
+
+! Intră în modul Global de configurare
+configure terminal
+
+! Creăm și numim VLAN-urile
+vlan 20
+ name NET
+exit
+vlan 40
+ name VOICE
+exit
+vlan 60
+ name WIFI
+exit
+
+! Configurăm porturile de acces pentru VLAN-ul 20 cu VLAN-ul de voce 40
+interface range FastEthernet0/3 - 5
+ switchport mode access
+ switchport access vlan 20
+ switchport voice vlan 40
+exit
+
+! Configurăm portul de acces pentru VLAN-ul 60
+interface FastEthernet0/24
+ switchport mode access
+ switchport access vlan 60
+exit
+
+! Ieșim din modul de configurare
+end
+
+! Salvăm configurația în memorie
+write memory
+
+### Comutatorul pe mai multe nivele OSI (MLS-Sucursala) ###
+___________________________________________________________
+
+! Intră în modul Global de configurare
+configure terminal
+
+! Creăm și numim VLAN-urile
+vlan 20
+ name NET
+exit
+vlan 40
+ name VOICE
+exit
+vlan 60
+ name WIFI
+exit
+
+! Configurăm GigabitEthernet1/0/6 ca un port de acces în VLAN 60
+interface GigabitEthernet1/0/6
+ switchport mode access
+ switchport access vlan 60
+exit
+
+! Ieșim din modul de configurare global
+end
+
+! Salvăm în memorie
+write memory

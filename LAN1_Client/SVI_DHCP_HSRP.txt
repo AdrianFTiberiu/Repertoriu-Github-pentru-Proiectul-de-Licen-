@@ -1,1 +1,0 @@
-# SVI, DHCP, and HSRP configuration for LAN 1 Client

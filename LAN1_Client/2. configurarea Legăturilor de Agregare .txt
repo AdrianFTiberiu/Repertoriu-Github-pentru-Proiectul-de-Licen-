@@ -1,0 +1,24 @@
+### Comutatoare pe mai multe nivele OSI (MLS-Central-1, MLS-Central-2) ###
+__________________________________________________________________________
+
+# Începem Modul de Configurație Global
+configure terminal
+
+# Mai întâi, definim grupul legăturilor de agregare
+interface range GigabitEthernet1/0/3 - 6
+ channel-group 1 mode active
+exit
+
+# Apoi, configurăm interfața de canal-port proaspăt creată
+interface Port-channel1
+ switchport mode trunk
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 10,30,50
+exit
+
+# Ieșim din Modul de Configurație Global
+end
+
+# Salvăm configurația în memorie
+write memory
+

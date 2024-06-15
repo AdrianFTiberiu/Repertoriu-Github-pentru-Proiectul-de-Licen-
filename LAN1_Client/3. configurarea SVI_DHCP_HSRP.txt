@@ -1,0 +1,55 @@
+### MLS-Central-1 ###
+_____________________
+
+configure terminal
+
+# SVI pentru VLAN 10
+interface vlan 10
+ ip address 192.168.10.2 255.255.255.0
+ ip helper-address 192.168.70.2
+ standby 10 ip 192.168.10.1
+ standby 10 priority 110
+ standby 10 preempt
+ no shutdown
+exit
+
+# SVI pentru VLAN 50
+interface vlan 50
+ ip address 192.168.50.2 255.255.255.0
+ ip helper-address 192.168.70.2
+ standby 50 ip 192.168.50.1
+ standby 50 priority 110
+ standby 50 preempt
+ no shutdown
+exit
+
+write memory
+
+### MLS-Central-2 ###
+_____________________
+
+configure terminal
+
+# SVI pentru VLAN 10
+interface vlan 10
+ ip address 192.168.10.3 255.255.255.0
+ ip helper-address 192.168.70.2
+ standby 10 ip 192.168.10.1
+ standby 10 priority 100
+ standby 10 preempt
+ no shutdown
+exit
+
+# SVI pentru VLAN 50
+interface vlan 50
+ ip address 192.168.50.3 255.255.255.0
+ ip helper-address 192.168.70.2
+ standby 50 ip 192.168.50.1
+ standby 50 priority 100
+ standby 50 preempt
+ no shutdown
+exit
+
+write memory
+
+

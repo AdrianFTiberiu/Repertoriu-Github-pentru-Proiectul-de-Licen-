@@ -1,0 +1,66 @@
+### Switch CF ###
+_________________
+
+interface range FastEthernet0/1 - 2
+ channel-group 1 mode active
+exit
+interface port-channel 1
+ switchport mode trunk
+exit
+
+! Configurăm facilitățile PortFast și garda BPDU pe interfețele specificate
+interface range FastEthernet0/3 - 5, FastEthernet0/24
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+exit
+
+do wr
+
+### Switch CS ###
+_________________
+
+interface range FastEthernet0/1 - 2
+ channel-group 2 mode active
+exit
+interface port-channel 2
+ switchport mode trunk
+exit
+
+! Configurăm facilitățile PortFast și garda BPDU pe interfețele specificate
+interface range FastEthernet0/3 - 5, FastEthernet0/24
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+exit
+
+do wr
+
+### MLS Sucursala ###
+_____________________
+
+interface range GigabitEthernet1/0/2 - 3
+ channel-group 1 mode active
+exit
+interface range GigabitEthernet1/0/4 - 5
+ channel-group 2 mode active
+exit
+
+interface port-channel 1
+ switchport mode trunk
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 20,40,60
+exit
+
+interface port-channel 2
+ switchport mode trunk
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 20,40,60
+exit
+
+! Interfața conectată la VoIP Router va fi configurată de tip trunk
+interface GigabitEthernet1/0/7
+ switchport mode trunk
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan all
+exit
+
+do wr
