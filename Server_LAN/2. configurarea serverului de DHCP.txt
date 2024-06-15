@@ -1,0 +1,44 @@
+! Se accesează serverul -> tabul services -> DHCP
+! Se introduc, seturile de adrese IP:
+
+### ETHERNETPool ###
+____________________
+
+Default Gateway: 192.168.10.1
+DNS Server: 192.168.70.3
+Start IP Address: 192.168.10.11
+Subnet Mask: 255.255.255.0
+Maximum Number of Users: 128
+WLC Address: 0.0.0.0 (neconfigurat)
+
+### WIRELESSPool ###
+____________________
+
+Default Gateway: 192.168.50.1
+DNS Server: 192.168.70.3
+Start IP Address: 192.168.50.11
+Subnet Mask: 255.255.255.0
+Maximum Number of Users: 128
+WLC Address: 192.168.50.4
+
+### NETPool ###
+_______________
+
+Default Gateway: 192.168.20.1
+DNS Server: 192.168.70.3
+Start IP Address: 192.168.20.11
+Subnet Mask: 255.255.255.0
+Maximum Number of Users: 128
+WLC Address: 0.0.0.0 (neconfigurat)
+
+### WIFIPool ###
+________________
+
+Default Gateway: 192.168.60.1
+DNS Server: 192.168.70.3
+Start IP Address: 192.168.60.11
+Subnet Mask: 255.255.255.0
+Maximum Number of Users: 128
+WLC Address: 192.168.60.4
+
+

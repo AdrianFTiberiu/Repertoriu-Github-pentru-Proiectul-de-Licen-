@@ -1,0 +1,12 @@
+! Se accesează serverul -> tabul services -> DNS
+! Se introduc, umrătoarele intrări:
+
+1)
+Nume: firma_DNS.com
+Tip: A Record
+Detaliu: 192.168.70.4
+
+2)
+Nume: email.com
+Tip: A Record
+Detaliu: 192.168.70.5

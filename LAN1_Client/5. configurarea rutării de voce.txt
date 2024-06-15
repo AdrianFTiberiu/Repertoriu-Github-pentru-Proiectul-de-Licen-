@@ -1,0 +1,70 @@
+### VoIP-Router-Central ###
+___________________________
+
+configure terminal
+int fa0/0
+ no shut
+! metoda router-pe-băț
+int fa0/0.30
+ encapsulation dot1Q 30
+ ip address 192.168.30.1 255.255.255.0
+exit
+
+! Serviciul de DHCP
+service dhcp
+ip dhcp pool VoIP
+ network 192.168.30.0 255.255.255.0
+ default-router 192.168.30.1
+ option 150 ip 192.168.30.1
+exit
+
+! Serviciul de Telefonie
+telephony-service
+ max-dn 10
+ max-ephones 10
+ auto assign 1 to 10
+ ip source-address 192.168.30.1 port 2000
+exit
+
+ephone-dn 1
+ number 3001
+exit
+
+ephone-dn 2
+ number 3002
+exit
+
+ephone-dn 3
+ number 3003
+exit
+
+ephone-dn 4
+ number 3004
+exit
+
+ephone-dn 5
+ number 3005
+exit
+
+ephone-dn 6
+ number 3006
+exit
+
+ephone-dn 7
+ number 3007
+exit
+
+ephone-dn 8
+ number 3008
+exit
+
+ephone-dn 9
+ number 3009
+exit
+
+ephone-dn 10
+ number 3010
+exit
+
+do wr
+

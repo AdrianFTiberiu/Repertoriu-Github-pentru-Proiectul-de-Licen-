@@ -1,0 +1,50 @@
+### ! PARTEA DE CLIENT: Se accesează clientul -> tabul desktop -> aplicația Email ###
+_____________________________________________________________________________________
+_____________________________________________________________________________________
+
+### Client 1: PC-ES-1 ###
+_______________
+
+Informații Utilizator:
+Nume utilizator: userOne
+Adresa de email: userOne@email.com
+
+Informații Server:
+Server mail incoming: email.com
+Server mail outgoing: email.com
+
+Informații Logare:
+Nume utilizator: userOne
+Parola: one
+
+### Client 2: PC-ES-2 ###
+_______________
+
+Informații Utilizator:
+Nume utilizator: userTwo
+Adresa de email: userTwo@email.com
+
+Informații Server:
+Server mail incoming: email.com
+Server mail outgoing: email.com
+
+Informații Logare:
+Nume utilizator: userTwo
+Parola: two
+
+### ! PARTEA DE SERVER: Se accesează serverul -> tabul services -> Email ###
+____________________________________________________________________________
+____________________________________________________________________________
+
+Servicii Email:
+SMTP Service: ON (activat)
+POP3 Service: ON (activat)
+
+Numele domeniului:
+Domain Name: email.com
+
+adăugarea utilizatorilor:
+User: userOne Password: one
+User: userTwo Password: two
+
++ Domeniul email.com este înregistrat pe serverul de DNS

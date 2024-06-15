@@ -1,0 +1,43 @@
+! Se accesează serverul -> tabul services -> HTTP
+! Se modifică fișierul index.html cu următorul conținut:
+
+<html>
+<center><font size='+2' color='blue'>Pagina de DNS a firmei</font></center>
+<h1>Pagina Web a firmei. Informatii importante ale firmei. Topologia rețelei ................
+<div class="container">
+        <h1>Descriere Servere</h1>
+
+        <h2>5.1.1. Server DHCP</h2>
+        <p>
+            Serverul de DHCP (tradus: Protocolul de Configurare Dinamică a Gazdei) oferă serviciul de DHCP, acest serviciu 
+            oferă clienților adrese IP atribuite dinamic. Are ca avantaj că această atribuire este automată și evită 
+            greșelile care ar putea fi cauzate de-o configurare manuală. De asemenea, acest server se ocupă cu actualizările 
+            configurațiilor dispozitivelor din rețea. Acest lucru este foarte important în cazul dacă adresa IP alocată 
+            dinamic expiră sau dispozitivul își schimbă poziția în topologie. O facilitate modernă de administrare a acestui 
+            server este faptul că poate configura simultan mai mulți clienți.[30]
+        </p>
+
+        <h2>5.1.2. Server MAIL</h2>
+        <p>
+            Serverul de Mail se ocupă cu stocarea și gestionarea de mailuri ale clienților. Acest server se deosebește de 
+            alte tipuri de servere datorită faptului că folosește alte 2 protocoale, unul la recepție, altul la transmisie. 
+            SMTP (tradus: Protocol Simplu de Transfer de Mail) este folosit la transmisie, iar POP3 (tradus: Protocolul 
+            Oficiu Poștal) este folosit la recepție. Din punct de vedere funcțional, serverele de Mail au doar rol 
+            intermediar, acestea fiind programate ca la recepția unui mail să vadă destinatarul și să inițieze procesul 
+            transmisie a mailului către destinația finală. Serverele de Mail sunt modulare, având nevoie de alte programe 
+            pentru a-și îndeplini funcțiile rețelistice.[30]
+        </p>
+
+        <h2>5.1.3. Server WEB</h2>
+        <p>
+            Aceste servere au rolul de-a stoca, procesa și livra pagini web către clienți. Ele sunt folosite pentru a 
+            gestiona accesul la paginile web găzduite. Schimbul de pagini web cu astfel de servere se pot face cu diferite 
+            protocoale prin care enumerăm HTTPS (tradus: Protocol de Transfer Hipertext Securizat), SMTP, FTP (tradus: 
+            Protocol de Transfer de Fișiere). Clienți sunt cei care pot interpreta și afișa paginile web, cum ar fi 
+            aplicațiile de navigare web, cum ar fi Google Chrome, Mozilla Firefox și Opera.[30]
+        </p>
+
+<h3>[30] : https://www.spiceworks.com/tech/tech-general/articles/what-is-a-server/
+    </div>
+</html>
+
