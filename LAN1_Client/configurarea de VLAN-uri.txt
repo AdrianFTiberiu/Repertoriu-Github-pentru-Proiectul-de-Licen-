@@ -1,0 +1,124 @@
+### Comutatoare pe mai multe nivele OSI (MLS-Central-1, MLS-Central-2) ###
+__________________________________________________________________________
+
+# Începem Modul de Configurație Global
+configure terminal
+
+# Creăm și dăm un nume la VLAN-uri
+vlan 10
+ name ETHERNET
+vlan 30
+ name PHONE
+vlan 50
+ name WIRELESS
+exit
+
+# Configurăm porturile GigabitEthernet specificate ca porturi de tip trunk
+interface range GigabitEthernet1/0/1 - GigabitEthernet1/0/2, GigabitEthernet1/0/7
+ switchport mode trunk
+ switchport trunk allowed vlan 10,30,50
+exit
+
+# Ieșim din Modul de Configurație Global
+end
+
+# Salvăm configurația în memorie
+write memory
+
+### Comutatoare pe nivelul 2 OSI (Switch-ES, Switch-EI) ###
+____________________________________________________________
+
+# Începem Modul de Configurație Global
+configure terminal
+
+# Creăm și dăm un nume la VLAN-uri
+vlan 10
+ name ETHERNET
+vlan 30
+ name PHONE
+vlan 50
+ name WIRELESS
+exit
+
+# Configurăm porturile de tip trunk pe cele care sunt conectate între comutatoarele pe nivel
+interface range FastEthernet0/1 - 0/2
+ switchport mode trunk
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 10,30,50
+exit
+
+# Configurăm porturile de tip access pentru VLAN-ul 10 cu VLAN-ul de voce 30
+interface range FastEthernet0/3 - 5
+ switchport mode access
+ switchport access vlan 10
+ switchport voice vlan 30
+exit
+
+# Configurăm portul de tip access pentru VLAN-ul 50
+interface FastEthernet0/24
+ switchport mode access
+ switchport access vlan 50
+
+# Activăm facilitățile PortFast și garda BPDU pe porturile de tip access
+interface range FastEthernet0/3 - 5, FastEthernet0/24
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+exit
+
+# Ieșim din Modul de Configurație Global
+end
+
+# Salvăm configurația în memorie
+write memory
+
+### Comutatorul Auxiliary Switch Central ###
+____________________________________________
+
+# Începem Modul de Configurație Global
+configure terminal
+
+# Creăm și dăm un nume la VLAN-uri
+vlan 10
+ name ETHERNET
+vlan 30
+ name PHONE
+vlan 50
+ name WIRELESS
+exit
+
+# Configurăm porturile de tip trunk pe cele care sunt conectate între comutatoarele pe nivel
+interface range FastEthernet0/1 - 2
+ switchport mode trunk
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 10,30,50
+exit
+
+# Configurăm portul conectat la routerul VoIP ca port de tip trunk
+interface FastEthernet0/3
+ switchport mode trunk
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 10,30,50
+exit
+
+# Configurăm portul conectat la WLC ca port de tip access în VLAN-ul WIRELESS
+interface FastEthernet0/4
+ switchport mode access
+ switchport access vlan 50
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+exit
+
+# Configurăm portul conectat la PC de management ca port de tip access în VLAN-ul ETHERNET
+interface FastEthernet0/5
+ switchport mode access
+ switchport access vlan 10
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+exit
+
+# Ieșim din Modul de Configurație Global
+end
+
+# Salvăm configurația în memorie
+write memory
+

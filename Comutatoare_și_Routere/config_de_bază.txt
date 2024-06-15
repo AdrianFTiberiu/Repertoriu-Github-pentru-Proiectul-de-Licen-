@@ -1,0 +1,16 @@
+configure terminal
+hostname nume_dispozitiv_de_Configurat (exemplu: Switch-ES)
+banner motd "ACCESUL NEAUTORIZAT SE PEDEPSESTE PRIN LEGE!"
+enable password calculatoare
+line console 0
+password calculatoare
+login
+exit
+no ip domain-lookup
+service password-encryption 
+ip domain-name upt.com
+username Adrian password Calculatoare
+crypto key generate rsa general-keys modulus 1024
+ip ssh version 2
+exit
+write memory
