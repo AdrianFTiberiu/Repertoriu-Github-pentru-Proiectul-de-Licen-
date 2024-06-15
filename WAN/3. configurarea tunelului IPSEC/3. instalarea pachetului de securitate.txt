@@ -1,0 +1,23 @@
+### Router-Central ###
+______________________
+
+configure terminal
+! instalare pachet
+license boot module c2900 technology-package securityk9
+yes
+! repornire echipament
+do reload
+yes
+! apasă tasta enter pentru a confirma
+
+### Router-Sucursala ###
+________________________
+
+configure terminal
+! instalare pachet
+license boot module c2900 technology-package securityk9
+yes
+! repornire echipament
+do reload
+yes
+! apasă tasta enter pentru a confirma

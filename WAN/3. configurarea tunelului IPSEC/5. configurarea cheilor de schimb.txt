@@ -1,0 +1,57 @@
+### Router-Central ###
+______________________
+
+configure terminal
+! politica cheilor de schimb
+crypto isakmp policy 10
+encryption aes 256
+authentication pre-share
+group 5
+exit
+! crearea cheii pre-partajate
+crypto isakmp key swordPass address 193.168.0.18
+do wr
+! definirea seturilor de transformări
+crypto ipsec transform-set SET-TUNNEL esp-aes esp-sha-hmac
+crypto map MAP-TUNNEL 10 ipsec-isakmp
+description VPN-ul ne lasa sa ne conectam la reteaua locala a Sucursalei
+set peer 193.168.0.18
+set transform-set SET-TUNNEL
+match address 110
+exit
+! definirea hărții de criptare
+int se0/1/1
+crypto map MAP-TUNNEL
+exit
+do wr
+! verificarea asociațiilor de securitate
+do show crypto ipsec sa
+
+### Router-Sucursala ###
+________________________
+
+configure terminal
+! politica cheilor de schimb
+crypto isakmp policy 10
+encryption aes 256
+authentication pre-share
+group 5
+exit
+! crearea cheii pre-partajate
+crypto isakmp key swordPass address 193.168.0.17
+do wr
+! definirea seturilor de transformări
+crypto ipsec transform-set SET-TUNNEL esp-aes esp-sha-hmac
+crypto map MAP-TUNNEL 10 ipsec-isakmp
+description VPN-ul ne lasa sa ne conectam la reteaua locala al Sediului Central
+set peer 193.168.0.17
+set transform-set SET-TUNNEL
+match address 110
+exit
+! definirea hărții de criptare
+int se0/1/0
+crypto map MAP-TUNNEL
+exit
+do wr
+! verificarea asociațiilor de securitate
+do show crypto ipsec sa

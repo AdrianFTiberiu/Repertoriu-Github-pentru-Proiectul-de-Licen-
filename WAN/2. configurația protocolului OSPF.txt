@@ -1,1 +1,99 @@
-# OSPF configuration for WAN
+### MLS Central 1 ###
+_____________________
+
+! Activează funcționalitatea de rutare
+ip routing
+! Începe procesul de OSPF
+router ospf 1
+! Promovarea VLAN-urilor din LAN 1 Client
+network 192.168.10.0 0.0.0.255 area 0
+network 192.168.30.0 0.0.0.255 area 0
+network 192.168.50.0 0.0.0.255 area 0
+! Promovarea rețelei între comutator și Router-Central
+network 193.168.0.0 0.0.0.3 area 0
+! Configurarea unei rute statice pentru rețele care nu sunt cuprinse de OSPF
+ip route 0.0.0.0 0.0.0.0 193.168.0.2
+
+### MLS Central 2 ###
+_____________________
+
+! Activează funcționalitatea de rutare
+ip routing
+! Începe procesul de OSPF
+router ospf 1
+! Promovarea VLAN-urilor din LAN 1 Client
+network 192.168.10.0 0.0.0.255 area 0
+network 192.168.30.0 0.0.0.255 area 0
+network 192.168.50.0 0.0.0.255 area 0
+! Promovarea rețelei între comutator și Router-Central
+network 193.168.0.4 0.0.0.3 area 0
+! Configurarea unei rute statice pentru rețele care nu sunt cuprinse de OSPF
+ip route 0.0.0.0 0.0.0.0 193.168.0.6
+
+### IPS1 ###
+____________
+
+! Începe procesul de OSPF
+router ospf 1
+! Promovarea rețelelor conectate la Router
+network 193.168.0.8 0.0.0.3 area 0
+network 193.168.0.20 0.0.0.3 area 0
+exit
+
+### IPS2 ###
+____________
+
+! Începe procesul de OSPF
+router ospf 1
+! Promovarea rețelelor conectate la Router
+network 193.168.0.12 0.0.0.3 area 0
+network 193.168.0.24 0.0.0.3 area 0
+exit
+
+### Router Central ###
+______________________
+
+! Începe procesul de OSPF
+router ospf 1
+! Promovarea rețelelor conectate la Router
+network 192.168.70.0 0.0.0.63 area 0
+network 193.168.0.0 0.0.0.3 area 0
+network 193.168.0.4 0.0.0.3 area 0
+network 193.168.0.8 0.0.0.3 area 0
+network 193.168.0.12 0.0.0.3 area 0
+network 193.168.0.16 0.0.0.3 area 0
+network 193.168.0.28 0.0.0.3 area 0
+! Configurarea unor route statice către ISP-uri
+ip route 0.0.0.0 0.0.0.0 193.168.0.14 50
+ip route 0.0.0.0 0.0.0.0 193.168.0.26 50
+
+### Router Sucursala ###
+________________________
+
+! Începe procesul de OSPF
+router ospf 1
+! Promovarea rețelelor conectate la Router
+network 193.168.0.24 0.0.0.3 area 0
+network 193.168.0.8 0.0.0.3 area 0
+network 193.168.0.16 0.0.0.3 area 0
+network 193.168.0.28 0.0.0.3 area 0
+! Configurarea unor route statice către ISP-uri
+ip route 0.0.0.0 0.0.0.0 193.168.0.2
+ip route 0.0.0.0 0.0.0.0 193.168.0.26 50
+
+### MLS Sucursala ###
+_____________________
+
+! Activează funcționalitatea de rutare
+ip routing
+! Începe procesul de OSPF
+router ospf 1
+! Promovarea VLAN-urilor din LAN 2 Client
+network 192.168.20.0 0.0.0.255 area 0
+network 192.168.40.0 0.0.0.255 area 0
+network 192.168.60.0 0.0.0.255 area 0
+! Promovarea rețelei între comutator și Router-Sucursala
+network 193.168.0.8 0.0.0.3 area 0
+! Configurarea unei rute statice pentru rețele care nu sunt cuprinse de OSPF
+ip route 0.0.0.0 0.0.0.0 193.168.0.29
+do wr

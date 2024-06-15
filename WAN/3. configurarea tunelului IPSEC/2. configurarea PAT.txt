@@ -1,0 +1,49 @@
+### Router-Central ###
+______________________
+
+conf t
+! Setare NAT-uri pe interfete
+int se0/1/0
+ ip nat outside
+exit
+int se0/2/0
+ ip nat outside
+exit
+int range g0/0-2
+ ip nat inside
+exit
+do wr
+! Setare facilitate PAT
+ip nat inside source list 1 interface se0/1/0 overload
+ip nat inside source list 1 interface se0/2/0 overload
+do wr
+! Setare liste de acces
+access-list 1 permit 192.168.10.0 0.0.0.255
+access-list 1 permit 192.168.30.0 0.0.0.255
+access-list 1 permit 192.168.50.0 0.0.0.255
+do wr
+
+### Router-Sucursala ###
+________________________
+
+conf t
+! Setare NAT-uri pe interfete
+int se0/2/0
+ ip nat outside
+exit
+int se0/1/1
+ ip nat outside
+exit
+int range g0/0
+ ip nat inside
+exit
+do wr
+! Setare facilitate PAT
+ip nat inside source list 1 interface se0/2/0 overload
+ip nat inside source list 1 interface se0/1/1 overload
+do wr
+! Setare liste de acces
+access-list 1 permit 192.168.20.0 0.0.0.255
+access-list 1 permit 192.168.40.0 0.0.0.255
+access-list 1 permit 192.168.60.0 0.0.0.255
+do wr

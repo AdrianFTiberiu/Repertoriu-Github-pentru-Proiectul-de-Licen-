@@ -1,1 +1,108 @@
-# Subnet configuration for WAN
+!Rezultat VLSM, se configurează ca în poza din README.md
+
+Pentru WAN|     Subnetarea 1|    193.168.0.0/30
+Pentru WAN|     Subnetarea 2|   193.168.0.4/30
+Pentru WAN|     Subnetarea 3|	193.168.0.8/30
+Pentru WAN|     Subnetarea 4|	193.168.0.12/30
+Pentru WAN|     Subnetarea 5|	193.168.0.16/30
+Pentru WAN|     Subnetarea 6|	193.168.0.20/30
+Pentru WAN|     Subnetarea 7|	193.168.0.24/30
+
+!În plus, singurul LAN neajutat de DHCP:
+Pentru LAN Server|	netare proprie|	193.168.0.28/30
+
+!Configurarea propriu-zisă:
+
+### MLS Central 1 ###
+_____________________
+
+conf t
+int g1/0/8
+ no switchport
+ ip address 193.168.0.1 255.255.255.252
+exit
+do wr
+
+### MLS Central 2 ###
+_____________________
+
+conf t
+int g1/0/8
+ no switchport
+ ip address 193.168.0.5 255.255.255.252
+exit
+do wr
+
+### IPS1 ###
+____________
+
+conf t
+int se0/3/0
+ ip address 193.168.0.10 255.255.255.252
+exit
+int se0/3/1
+ ip address 193.168.0.22 255.255.255.252
+exit
+do wr
+
+### IPS2 ###
+____________
+
+conf t
+int se0/3/0
+ ip address 193.168.0.14 255.255.255.252
+exit
+int se0/3/1
+ ip address 193.168.0.26 255.255.255.252
+exit
+do wr
+
+### Router Central ###
+______________________
+
+conf t
+int g0/0
+ ip address 193.168.0.2 255.255.255.252
+exit
+int g0/1
+ ip address 193.168.0.6 255.255.255.252
+exit
+int se0/1/1
+ ip address 193.168.0.17 255.255.255.252
+exit
+int se0/2/0
+ ip address 193.168.0.13 255.255.255.252
+exit
+int se0/1/0
+ ip address 193.168.0.9 255.255.255.252
+exit
+int g0/2
+ ip address 192.168.70.1 255.255.255.192
+exit
+
+### Router Sucursala ###
+________________________
+
+conf t
+int se0/1/0
+ ip address 193.168.0.18 255.255.255.252
+exit
+int se0/1/1
+ ip address 193.168.0.21 255.255.255.252
+exit
+int se0/2/0
+ ip address 193.168.0.25 255.255.255.252
+exit
+int g0/0
+ ip address 193.168.0.29 255.255.255.252
+exit
+
+### MLS Sucursala ###
+_____________________
+
+conf t
+int g1/0/1
+ no switchport
+ ip address 193.168.0.30 255.255.255.252
+exit
+
