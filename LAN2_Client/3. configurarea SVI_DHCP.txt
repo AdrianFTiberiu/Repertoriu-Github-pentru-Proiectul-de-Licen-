@@ -1,1 +1,20 @@
+### MLS-Sucursala ###
+_____________________
 
+configure terminal
+
+# SVI pentru VLAN 20
+interface vlan 20
+ ip address 192.168.20.1 255.255.255.0
+ ip helper-address 192.168.70.2
+ no shutdown
+exit
+
+# SVI pentru VLAN 60
+interface vlan 60
+ ip address 192.168.60.1 255.255.255.0
+ ip helper-address 192.168.70.2
+ no shutdown
+exit
+
+write memory
