@@ -1,0 +1,78 @@
+Router-Central către Switch-Central-1:
+Router-Central: Gig0/0
+Switch-Central-1: Gig1/0/6
+Router-Central către Switch-Central-2:
+Router-Central: Gig0/1
+Switch-Central-2: Gig1/0/5
+Router-Central către Server Room Switch:
+Router-Central: Gig0/2
+Server Room Switch: Fa0/1
+Switch-Central-1 către Switch-Central-2 (agregare):
+Switch-Central-1: Gig1/0/8, Gig1/0/7
+Switch-Central-2: Gig1/0/3, Gig1/0/4
+Switch-Central-1 către Switch-ES:
+Switch-Central-1: Gig1/0/2
+Switch-ES: Fa0/1
+Switch-Central-2 către Switch-CF:
+Switch-Central-2: Gig1/0/1
+Switch-CF: Fa0/1
+Switch-Central-2 către Switch-CS:
+Switch-Central-2: Gig1/0/2
+Switch-CS: Fa0/1
+Switch-Central-2 către WLC-Central:
+Switch-Central-2: Gig1/0/4
+WLC-Central: Gig0
+Router-Sucursala către Switch-Sucursala:
+Router-Sucursala: Gig0/0
+Switch-Sucursala: Gig1/0/1
+Router-Sucursala către Switch-Sucursala (agregare):
+Router-Sucursala: Gig1/0/2, Gig1/0/3
+Switch-Sucursala: Gig1/0/4, Gig1/0/5
+Router-Sucursala către ISP1:
+Router-Sucursala: Se0/1/1
+ISP1: Se0/3/0
+Router-Sucursala către ISP2:
+Router-Sucursala: Se0/2/0
+ISP2: Se0/3/1
+ISP1 către ISP2:
+ISP1: Se0/3/1
+ISP2: Se0/3/0
+Switch-ES către PC-ES-1:
+Switch-ES: Fa0/2
+PC-ES-1: Fa0
+Switch-ES către PC-ES-2:
+Switch-ES: Fa0/3
+PC-ES-2: Fa0
+Switch-CF către PC-CF-1:
+Switch-CF: Fa0/2
+PC-CF-1: Fa0
+Switch-CF către PC-CF-2:
+Switch-CF: Fa0/3
+PC-CF-2: Fa0
+Switch-CF către Laptop-CF-1 (fără fir):
+Switch-CF: Fa0/4
+Laptop-CF-1: fără fir
+Switch-CF către Laptop-CF-2 (fără fir):
+Switch-CF: Fa0/5
+Laptop-CF-2: fără fir
+Switch-CS către PC-CS-1:
+Switch-CS: Fa0/2
+PC-CS-1: Fa0
+Switch-CS către PC-CS-2:
+Switch-CS: Fa0/3
+PC-CS-2: Fa0
+Switch-CS către Laptop-CS-1 (fără fir):
+Switch-CS: Fa0/4
+Laptop-CS-1: fără fir
+Switch-CS către Laptop-CS-2 (fără fir):
+Switch-CS: Fa0/5
+Laptop-CS-2: fără fir
+Switch-Sucursala către PC-S:
+Switch-Sucursala: Fa0/1
+PC-S: Fa0
+Switch-Sucursala către WLC-Sucursala:
+Switch-Sucursala: Gig1/0/4
+WLC-Sucursala: Gig1
+Switch-Sucursala către VoIP-Router-Sucursala:
+Switch-Sucursala: Fa0/7
+VoIP-Router-Sucursala: Gig0
