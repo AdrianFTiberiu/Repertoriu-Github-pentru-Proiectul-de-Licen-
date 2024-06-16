@@ -33,7 +33,25 @@ Se află în fișierul aflat la Repertoriu-Github-pentru-Proiectul-de-Licen-/Con
 
 3. Unele dispozitive trebuie modificate pentru a putea funcționa în rețea
 
-//vezi folder-ul cu screenshot-uri
+3.1. Liniile seriale au nevoie de anumite module hardware pentru a funcționa, cum ar fi HWC-2T. Aceste module va face ca interfețe care suportă linii seriale, cum ar fi se1/0/1, să existe.
+
+![Alt text](./poze%20Readme/1.Punere%20module%20seriale%20pe%20routere/1.png)
+![Alt text](./poze%20Readme/1.Punere%20module%20seriale%20pe%20routere/2.png)
+
+3.2. Telefoanele IP și Punctele de Acces au nevoie de un adaptor pentru a putea fi alimentate. 
+
+Telefoane IP
+![Alt text](./poze%20Readme/2.Conectare%20adaptor%20la%20telefon%20IP/4.png)
+![Alt text](./poze%20Readme/2.Conectare%20adaptor%20la%20telefon%20IP/5.png)
+
+Puncte de Acces
+![Alt text](./poze%20Readme/3.Conectare%20adaptor%20la%20LAP/6.png)
+![Alt text](./poze%20Readme/3.Conectare%20adaptor%20la%20LAP/7.png)
+
+3.3. Pentru a putea fi conectate la Punctele de Acces, Laptop-urile au nevoie de noi module, WPC.
+
+![Alt text](./poze%20Readme/4.Conectare%20modul%20Wireless%20la%20laptop/9.png)
+![Alt text](./poze%20Readme/4.Conectare%20modul%20Wireless%20la%20laptop/10.png)
 
 4. Cu topologia încheiată, se parcurg directoarele și se aplică pe dispozitivele indicate în fișierele interioare, configurările și scripturile aflate în acestea. În timp, ce fiecare fișierele din fiecare
 director trebuie parcurs în ordine numerică, directoarele se parcurg în această ordine: 
