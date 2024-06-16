@@ -13,17 +13,17 @@ Descărcarea va presupune crearea unui cont pe site.
 2.5. Indicații despre implementarea topologiei
 
 Tipurile de dispozitive și fire folosite:
-PC : PC-PT
-Laptop : Laptop-PT
-Telefon IP : IP Phone 7960
-Punct de Acces : LAP-PT
-Server : SERVER-PT
-Comutator pe un singur nivel OSI : 2960-24TT
-Comutator pe mai multe nivele OSI : 3650-24PS
-Router VoIP și ISP-uri : 2811
-Celelalte Routere : 2911
-Controler fără fir : WLC-2504
-fire negre de conectare : copper straight-through (lnie continua) / cross-over (linie intrerupta)
+PC : PC-PT /
+Laptop : Laptop-PT /
+Telefon IP : IP Phone 7960 /
+Punct de Acces : LAP-PT /
+Server : SERVER-PT /
+Comutator pe un singur nivel OSI : 2960-24TT /
+Comutator pe mai multe nivele OSI : 3650-24PS /
+Router VoIP și ISP-uri : 2811 /
+Celelalte Routere : 2911 /
+Controler fără fir : WLC-2504 /
+fire negre de conectare : copper straight-through (linie continua) / cross-over (linie intrerupta) /
 fire rosii (seriale) : DCE
 
 Scheme de conectare:
