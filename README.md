@@ -8,7 +8,9 @@ Descărcarea va presupune crearea unui cont pe site.
 
 2. Va trebui să creăm o topologie ca în imaginea de mai jos:
 
-//poză cu întreaga topologie
+![Alt text](./poze%20Readme/1.png)
+![Alt text](./poze%20Readme/2.png)
+![Alt text](./poze%20Readme/3.png)
 
 2.5. Indicații despre implementarea topologiei
 
