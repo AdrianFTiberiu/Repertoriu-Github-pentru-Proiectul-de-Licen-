@@ -166,5 +166,4 @@ MLS-Sucursala
              Por 2            146                    3650        Gig 1/0/5
 
 Restul conexiunilor prin fir din topologie vor fi realizate cu conectorul automatic
-
-![Alt text](./1.png)
+(referire: poza Conexiune.png)
