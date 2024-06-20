@@ -167,4 +167,4 @@ MLS-Sucursala
 
 Restul conexiunilor prin fir din topologie vor fi realizate cu conectorul automatic
 
-![Alt text](./poza_Conexiuni.JPG)
+![Alt text](./poza_Conexiuni.png)
