@@ -10,7 +10,4 @@ no ip domain-lookup
 service password-encryption 
 ip domain-name upt.com
 username Adrian password Calculatoare
-crypto key generate rsa general-keys modulus 1024
-ip ssh version 2
-exit
-write memory
+
