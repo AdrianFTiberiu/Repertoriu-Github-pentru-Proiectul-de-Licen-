@@ -1,78 +1,170 @@
-Router-Central către Switch-Central-1:
-Router-Central: Gig0/0
-Switch-Central-1: Gig1/0/6
-Router-Central către Switch-Central-2:
-Router-Central: Gig0/1
-Switch-Central-2: Gig1/0/5
-Router-Central către Server Room Switch:
-Router-Central: Gig0/2
-Server Room Switch: Fa0/1
-Switch-Central-1 către Switch-Central-2 (agregare):
-Switch-Central-1: Gig1/0/8, Gig1/0/7
-Switch-Central-2: Gig1/0/3, Gig1/0/4
-Switch-Central-1 către Switch-ES:
-Switch-Central-1: Gig1/0/2
-Switch-ES: Fa0/1
-Switch-Central-2 către Switch-CF:
-Switch-Central-2: Gig1/0/1
-Switch-CF: Fa0/1
-Switch-Central-2 către Switch-CS:
-Switch-Central-2: Gig1/0/2
-Switch-CS: Fa0/1
-Switch-Central-2 către WLC-Central:
-Switch-Central-2: Gig1/0/4
-WLC-Central: Gig0
-Router-Sucursala către Switch-Sucursala:
-Router-Sucursala: Gig0/0
-Switch-Sucursala: Gig1/0/1
-Router-Sucursala către Switch-Sucursala (agregare):
-Router-Sucursala: Gig1/0/2, Gig1/0/3
-Switch-Sucursala: Gig1/0/4, Gig1/0/5
-Router-Sucursala către ISP1:
-Router-Sucursala: Se0/1/1
-ISP1: Se0/3/0
-Router-Sucursala către ISP2:
-Router-Sucursala: Se0/2/0
-ISP2: Se0/3/1
-ISP1 către ISP2:
-ISP1: Se0/3/1
-ISP2: Se0/3/0
-Switch-ES către PC-ES-1:
-Switch-ES: Fa0/2
-PC-ES-1: Fa0
-Switch-ES către PC-ES-2:
-Switch-ES: Fa0/3
-PC-ES-2: Fa0
-Switch-CF către PC-CF-1:
-Switch-CF: Fa0/2
-PC-CF-1: Fa0
-Switch-CF către PC-CF-2:
-Switch-CF: Fa0/3
-PC-CF-2: Fa0
-Switch-CF către Laptop-CF-1 (fără fir):
-Switch-CF: Fa0/4
-Laptop-CF-1: fără fir
-Switch-CF către Laptop-CF-2 (fără fir):
-Switch-CF: Fa0/5
-Laptop-CF-2: fără fir
-Switch-CS către PC-CS-1:
-Switch-CS: Fa0/2
-PC-CS-1: Fa0
-Switch-CS către PC-CS-2:
-Switch-CS: Fa0/3
-PC-CS-2: Fa0
-Switch-CS către Laptop-CS-1 (fără fir):
-Switch-CS: Fa0/4
-Laptop-CS-1: fără fir
-Switch-CS către Laptop-CS-2 (fără fir):
-Switch-CS: Fa0/5
-Laptop-CS-2: fără fir
-Switch-Sucursala către PC-S:
-Switch-Sucursala: Fa0/1
-PC-S: Fa0
-Switch-Sucursala către WLC-Sucursala:
-Switch-Sucursala: Gig1/0/4
-WLC-Sucursala: Gig1
-Switch-Sucursala către VoIP-Router-Sucursala:
-Switch-Sucursala: Fa0/7
-VoIP-Router-Sucursala: Gig0
+Switch-ES#show cdp neighbors
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+MLS-Central-1
+             Fas 0/1          159                    3650        Gig 1/0/1
+MLS-Central-2
+             Fas 0/2          159                    3650        Gig 1/0/2
+IP Phone     Fas 0/5          159            H P     7960     
+
+Switch-EI#show cdp neighbors
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+IP Phone     Fas 0/5          160            H P     7960         
+MLS-Central-1
+             Fas 0/2          160                    3650        Gig 1/0/2
+MLS-Central-2
+             Fas 0/1          160                    3650        Gig 1/0/1
+
+MLS-Central-1#show cdp neighbors
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+Switch-ES    Gig 1/0/1        125            S       2960        Fas 0/1
+Switch-EI    Gig 1/0/2        125            S       2960        Fas 0/2
+Auxilliary-Switch-Central
+             Gig 1/0/7        125            S       2960        Fas 0/1
+Router-Central
+             Gig 1/0/8        125            R       C2900       Gig 0/0
+MLS-Central-2
+             Por 1            125                    3650        Gig 1/0/3
+MLS-Central-2
+             Por 1            125                    3650        Gig 1/0/4
+MLS-Central-2
+             Por 1            125                    3650        Gig 1/0/5
+MLS-Central-2
+             Por 1            125                    3650        Gig 1/0/6
+MLS-Central-2
+             Por 1            125                    3650        Por 1
+
+MLS-Central-2#show cdp neighbors
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+Switch-ES    Gig 1/0/2        138            S       2960        Fas 0/2
+Switch-EI    Gig 1/0/1        138            S       2960        Fas 0/1
+Auxilliary-Switch-Central
+             Gig 1/0/7        138            S       2960        Fas 0/2
+Router-Central
+             Gig 1/0/8        138            R       C2900       Gig 0/1
+MLS-Central-1
+             Por 1            138                    3650        Gig 1/0/3
+MLS-Central-1
+             Por 1            138                    3650        Gig 1/0/4
+MLS-Central-1
+             Por 1            138                    3650        Gig 1/0/5
+MLS-Central-1
+             Por 1            138                    3650        Gig 1/0/6
+MLS-Central-1
+             Por 1            138                    3650        Por 1
+
+Auxilliary-Switch-Central#show cdp neighbors
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+MLS-Central-1
+             Fas 0/1          153                    3650        Gig 1/0/7
+VoIP-Router-Central
+             Fas 0/3          153            R       C2800       Fas 0/0
+MLS-Central-2
+             Fas 0/2          153                    3650        Gig 1/0/7
+VoIP-Router-Central
+             Fas 0/3          153            R       C2800       Fas 0/0.30
+
+Router-Central#show cdp neighbors
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+Switch-Server
+             Gig 0/2          176            S       2960        Fas 0/1
+MLS-Central-1
+             Gig 0/0          176                    3650        Gig 1/0/8
+MLS-Central-2
+             Gig 0/1          176                    3650        Gig 1/0/8
+ISP1         Ser 0/1/0        125            R       C2800       Ser 0/3/0
+ISP2         Ser 0/2/0        125            R       C2800       Ser 0/3/0
+Router-Sucursala
+             Ser 0/1/1        126            R       C2900       Ser 0/1/0
+
+Router-Sucursala#show cdp neighbors
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+MLS-Sucursala
+             Gig 0/0          151                    3650        Gig 1/0/1
+ISP1         Ser 0/1/1        161            R       C2800       Ser 0/3/1
+Router-Central
+             Ser 0/1/0        152            R       C2900       Ser 0/1/1
+ISP2         Ser 0/2/0        161            R       C2800       Ser 0/3/1
+
+ISP1#show cdp neighbors
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+Router-Sucursala
+             Ser 0/3/1        130            R       C2900       Ser 0/1/1
+Router-Central
+             Ser 0/3/0        121            R       C2900       Ser 0/1/0
+
+ISP2#show cdp neighbors
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+Router-Sucursala
+             Ser 0/3/1        165            R       C2900       Ser 0/2/0
+Router-Central
+             Ser 0/3/0        156            R       C2900       Ser 0/2/0
+
+Switch-Server#show cdp neighbors
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+Router-Central
+             Fas 0/1          171            R       C2900       Gig 0/2
+
+MLS-Sucursala#show cdp neighbors
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+Router-Sucursala
+             Gig 1/0/1        160            R       C2900       Gig 0/0
+Switch-CS    Por 2            150            S       2960        Fas 0/1
+Switch-CS    Por 2            150            S       2960        Fas 0/2
+Switch-CS    Por 2            150            S       2960        Por 2
+Switch-CF    Por 1            150            S       2960        Fas 0/1
+Switch-CF    Por 1            150            S       2960        Fas 0/2
+Switch-CF    Por 1            150            S       2960        Por 1
+VoIP-Router-Sucursala
+             Gig 1/0/7        149            R       C2800       Fas 0/0
+VoIP-Router-Sucursala
+             Gig 1/0/7        149            R       C2800       Fas 0/0.40
+            
+Switch-CF#show cdp neighbors
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+IP Phone     Fas 0/5          127            H P     7960         
+MLS-Sucursala
+             Por 1            126                    3650        Gig 1/0/2
+MLS-Sucursala
+             Por 1            126                    3650        Gig 1/0/3
+MLS-Sucursala
+             Por 1            126                    3650        Por 1
+
+Switch-CS#show cdp neighbors
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+IP Phone     Fas 0/5          147            H P     7960         
+MLS-Sucursala
+             Por 2            146                    3650        Gig 1/0/4
+MLS-Sucursala
+             Por 2            146                    3650        Por 2
+MLS-Sucursala
+             Por 2            146                    3650        Gig 1/0/5
+
+Restul conexiunilor prin fir din topologie vor fi realizate cu conectorul automatic
+
+![Alt text](./poza_Conexiuni.JPG)
