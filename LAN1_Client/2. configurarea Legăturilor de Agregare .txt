@@ -5,6 +5,7 @@ __________________________________________________________________________
 configure terminal
 
 # Mai întâi, definim grupul legăturilor de agregare
+# se foloseste LACP protocol
 interface range GigabitEthernet1/0/3 - 6
  channel-group 1 mode active
 exit
