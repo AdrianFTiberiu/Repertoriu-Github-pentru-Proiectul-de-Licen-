@@ -1,5 +1,5 @@
 configure terminal
-hostname nume_dispozitiv_de_Configurat (exemplu: Switch-ES)
+hostname nume_dispozitiv_de_Configurat  (exemplu: Switch-ES)
 banner motd "ACCESUL NEAUTORIZAT SE PEDEPSESTE PRIN LEGE!"
 enable password calculatoare
 line console 0
