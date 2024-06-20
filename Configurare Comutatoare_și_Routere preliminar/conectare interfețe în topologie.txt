@@ -167,4 +167,4 @@ MLS-Sucursala
 
 Restul conexiunilor prin fir din topologie vor fi realizate cu conectorul automatic
 
-![Alt text](Repertoriu-Github-pentru-Proiectul-de-Licen-/Configurare Comutatoare_și_Routere preliminar/poza_Conexiuni.png)
+![Alt text](./1.png)
