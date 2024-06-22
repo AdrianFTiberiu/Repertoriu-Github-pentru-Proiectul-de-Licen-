@@ -44,10 +44,7 @@ VLAN: Selectați VLAN-ul pentru rețea (default: management VLAN).
 
 4. Setări Avansate:
 
-Activați sau dezactivați optimizarea parametrilor RF.
-Adresa IP virtuală: "192.0.2.1."
-Selectați grupul de mobilitate local, "Default."
-! Apăsați "Next" pentru a finaliza configurarea.
+Cele din oficiu sunt lasate la fel.
 
 ### Configurarea subrețelei fără fir ###
 ____________________________________________
