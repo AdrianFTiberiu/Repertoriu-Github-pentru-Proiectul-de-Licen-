@@ -8,9 +8,9 @@ Descărcarea va presupune crearea unui cont pe site.
 
 2. Va trebui să creăm o topologie ca în imaginea de mai jos:
 
-![Alt text](./poze%20Readme/1.png)
-![Alt text](./poze%20Readme/2.png)
-![Alt text](./poze%20Readme/3.png)
+![Alt text](./poze/poze%20Readme/Topologie/1.png)
+![Alt text](./poze/poze%20Readme/Topologie/2.png)
+![Alt text](./poze/poze%20Readme/Topologie/3.png)
 
 2.5. Indicații despre implementarea topologiei
 
@@ -35,8 +35,8 @@ Se află în fișierul aflat la Repertoriu-Github-pentru-Proiectul-de-Licenta/Im
 
 3.1. Liniile seriale au nevoie de anumite module hardware pentru a funcționa, cum ar fi HWC-2T. Aceste module va face ca interfețe care suportă linii seriale, cum ar fi se1/0/1, să existe.
 
-![Topologie 1](./poze/poze%20Readme/1.Punere%20module%20seriale%20pe%20routere/1.png)
-![Topologie 2](./poze/poze%20Readme/1.Punere%20module%20seriale%20pe%20routere/2.png)
+![Alt text](./poze/poze%20Readme/1.Punere%20module%20seriale%20pe%20routere/1.png)
+![Alt text](./poze/poze%20Readme/1.Punere%20module%20seriale%20pe%20routere/2.png)
 
 3.2. Telefoanele IP și Punctele de Acces au nevoie de un adaptor pentru a putea fi alimentate. 
 
