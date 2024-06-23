@@ -1,6 +1,6 @@
 !Rezultat VLSM, se configurează ca în poza din README.md
 
-Pentru WAN|     Subnetarea 1|    193.168.0.0/30
+Pentru WAN|     Subnetarea 1|   193.168.0.0/30
 Pentru WAN|     Subnetarea 2|   193.168.0.4/30
 Pentru WAN|     Subnetarea 3|	193.168.0.8/30
 Pentru WAN|     Subnetarea 4|	193.168.0.12/30
