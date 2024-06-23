@@ -4,6 +4,7 @@ Include, în principal, scripturile pentru configurarea dispozitivelor din rețe
 Pașii de simulare a rețelei de comunicație local:
 
 1. Se descarcă simulatorul Packet Tracer de la link-ul: https://skillsforall.com/resources/lab-downloads?courseLang=en-US
+
 Descărcarea va presupune crearea unui cont pe site.
 
 2. Va trebui să creăm o topologie ca în imaginea de mai jos:
