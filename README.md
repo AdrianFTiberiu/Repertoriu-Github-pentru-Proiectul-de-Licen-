@@ -65,7 +65,8 @@ Puncte de Acces
 ![Alt text](./poze/poze%20Readme/4.Conectare%20modul%20Wireless%20la%20laptop/9.png)
 ![Alt text](./poze/poze%20Readme/4.Conectare%20modul%20Wireless%20la%20laptop/10.png)
 
-4. Cu topologia încheiată, se parcurg directoarele din directorul Implementare și se aplică pe dispozitivele indicate în fișierele interioare, configurările și scripturile aflate în acestea. În timp, ce fiecare fișierele din fiecare director trebuie parcurs în ordine numerică, directoarele se parcurg în această ordine: 
+4. Cu topologia încheiată, se parcurg directoarele din directorul Implementare și se aplică pe dispozitivele indicate în fișierele interioare, configurările și scripturile aflate în acestea. În timp, ce fiecare fișier din fiecare director trebuie parcurs în ordine numerică, directoarele se parcurg în această ordine: 
+
 Configurare Comutatoare_și_Routere preliminar, LAN1_Client, LAN2_Client, Server_LAN, WAN.
 
 
